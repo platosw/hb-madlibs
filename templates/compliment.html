@@ -1,11 +1,21 @@
 <!doctype html>
 <html>
 <head>
+  <link rel="stylesheet" href="/static/compliment.css">
   <title>A Compliment</title>
 </head>
 <body>
+  <div class="person">
     <h1>{{name}}</h1>
-    <h1>Do you want to play a game?</h1>
+    <h2>I think, you are..</h2>
+    <ul>
+    {% for word in compliments %}
+        <li>{{word}}</li>
+        {% endfor %}
+    </ul>
+  </div>
+  <div class="form">
+    <h3>Do you want to play a game?</h3>
     <form action="/game">
       <input type="radio" name="choice" value="yes">
       <label for="yes">Yes</label>
@@ -13,5 +23,6 @@
       <label for="no">No</label>
       <input type="submit">
     </form>
+  </div>
 </body>
 </html>
